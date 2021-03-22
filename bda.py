@@ -2,10 +2,10 @@ from klein import run, route
 import redis
 import os
 
-# Start up a Redis instance
+# Spin up a Redis instance
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-# Pull out all the recommendations from HDFS
+# Pull out all the recommendations from Hadoop file system HDFS
 p = os.popen("hadoop fs -cat recommendations/part*")
 
 # Load the recommendations into Redis
